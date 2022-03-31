@@ -4,18 +4,20 @@ package com.careerdevs;
 public class Car {
 
     // Fields
-    String make;
-    String model;
-    short year;
+    private String make;
+    private String model;
+    private short year;
+    private String licenseplate;
 
 
     // Constructor
     //
 
-    public Car(String make, String model, short year) {
+    public Car(String make, String model, short year, String licenseplate) {
         this.make = make;
         this.model = model;
         this.year = year;
+        this.licenseplate = licenseplate;
     }
 
 
@@ -38,6 +40,8 @@ public class Car {
         return year;
     }
 
+    public String getLicenseplate() { return licenseplate; }
+
     // Setters
 
     public void setMake(String make) {
@@ -52,15 +56,17 @@ public class Car {
         this.year = year;
     }
 
+    public void setLicenseplate (String licenseplate) { this.licenseplate = licenseplate; }
+
 
     // Override toString to make the resulting information legible
 
     @Override
     public String toString() {
         return "Car{" +
-                "make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
+                "make: " + make +
+                ", model: " + model +
+                ", year: " + year + ", license plate: " + licenseplate +
                 '}';
     }
 }
