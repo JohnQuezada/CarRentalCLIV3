@@ -9,6 +9,8 @@ public class Dealership {
     private List<Car> availableCars;
     private List<Car> soldCars;
 
+
+    // We only pass in the dealership name property
     public Dealership (String dealershipName) {
 
         this.dealershipName = dealershipName;

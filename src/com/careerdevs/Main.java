@@ -33,18 +33,64 @@ public class Main {
         dealership1.getAvailableCars().add(car2);
         dealership1.getAvailableCars().add(car3);
 
+        System.out.println("Hello welcome to the " + dealership1.getDealershipName() + " dealership");
+        while (true) {
+            System.out.println("Would you like to (1) buy a car (2) Return a car or (3) Leave the dealership");
+            int res = scanner.nextInt();
+            scanner.nextLine();
+            if (res == 3) {
+                System.out.println("You are now leaving the dealership");
+                break;
+            } else if (res == 2) {
+                // return car
+                System.out.println("Which car would you like to return?" + "\n");
 
-        System.out.println("Which car would you like to rent? Please input the License Plate.");
+                for (int i = 0; i < dealership1.getSoldCars().size(); i++) {
+                    System.out.println(dealership1.getSoldCars().get(i));
+                }
 
-        for (int i = 0; i < dealership1.getAvailableCars().size(); i++) {
-            System.out.println(dealership1.getAvailableCars().get(i));
+                System.out.println("\n");
+
+                System.out.print("Please input the License Plate.\nInput:");
+                String userInput = scanner.nextLine();
+
+                dealership1.returnCar(userInput);
+            } else if (res == 1) {
+                // buy car
+                System.out.println("Which car would you like to rent?" + "\n");
+
+                for (int i = 0; i < dealership1.getAvailableCars().size(); i++) {
+                    System.out.println(dealership1.getAvailableCars().get(i));
+                }
+
+                System.out.println("\n");
+
+                System.out.print("Please input the License Plate.\nInput:");
+                String userInput = scanner.nextLine();
+
+                dealership1.buyCar(userInput);
+            } else {
+                System.out.println("Invalid input: please input 1,2, or 3");
+            }
         }
 
-        String userInput = scanner.nextLine();
-        dealership1.buyCar(userInput);
 
-        System.out.println(dealership1.getAvailableCars());
-        System.out.println(dealership1.getSoldCars());
+//        System.out.println("Which car would you like to rent?" + "\n");
+//
+//        for (int i = 0; i < dealership1.getAvailableCars().size(); i++) {
+//            System.out.println(dealership1.getAvailableCars().get(i));
+//        }
+//
+//        System.out.println("\n");
+//
+//        System.out.print("Please input the License Plate.\nInput:");
+//        String userInput = scanner.nextLine();
+//
+//        dealership1.buyCar(userInput);
+
+        // System.out.println(dealership1.getAvailableCars());
+
+       // System.out.println(dealership1.getSoldCars());
 
 
     }
